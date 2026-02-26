@@ -1,0 +1,35 @@
+{
+  "name": "sathiconnect",
+  "version": "1.0.0",
+  "description": "Social Network for Friends",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Siddarth0/SathiConnect.git"
+  },
+  "author": "Siddartha Kunwar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Siddarth0/SathiConnect/issues"
+  },
+  "homepage": "https://github.com/Siddarth0/SathiConnect#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "config": "^4.4.1",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "gravatar": "^1.8.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.2.2",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
