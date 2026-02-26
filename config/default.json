@@ -1,4 +1,6 @@
 {
     "mongoURI": "mongodb+srv://admin:admin@cluster0.my65stu.mongodb.net/?appName=Cluster0",
-    "jwtSecret": "mysecrettoken"
+    "jwtSecret": "mysecrettoken",
+    "githubClientId": "Ov23li6ylEXruGT1Yo6y",
+    "githubSecret": "de9cbc60b6dd14cb11351fdaed15a9e60c86cec4"
 }
