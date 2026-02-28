@@ -1,7 +1,10 @@
 import React, { Fragment, useState } from "react";
-import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { setAlert } from "../../actions/alert";
+import PropTypes from "prop-types";
 
-const Register = () => {
+const Register = ({ setAlert }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,35 +17,35 @@ const Register = () => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    if(password !== password2){
-        console.log('Passwords donot match');
-    } else{
-        console.log('SUCCESS');
-        // const newUser = {
-        //     name,
-        //     email,
-        //     password
-        // }
-        // try {
-        //     const config = {
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         }
-        //     }
+    if (password !== password2) {
+      setAlert("Passwords donot match", "danger");
+    } else {
+      console.log("SUCCESS");
+      // const newUser = {
+      //     name,
+      //     email,
+      //     password
+      // }
+      // try {
+      //     const config = {
+      //         headers: {
+      //             'Content-Type': 'application/json'
+      //         }
+      //     }
 
-        //     const body = JSON.stringify(newUser);
+      //     const body = JSON.stringify(newUser);
 
-        //     const res = await axios.post('/api/users', body, config);
-        //     console.log(res.data);
+      //     const res = await axios.post('/api/users', body, config);
+      //     console.log(res.data);
 
-        // } catch (err) {
-        //     console.error(err.response.data);
+      // } catch (err) {
+      //     console.error(err.response.data);
 
-        // }
+      // }
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -50,7 +53,7 @@ const Register = () => {
       <p className="lead">
         <i className="fas fa-user"></i> Create Your Account
       </p>
-      <form className="form" onSubmit={e => onSubmit(e)}>
+      <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
           <input
             type="text"
@@ -104,4 +107,8 @@ const Register = () => {
   );
 };
 
-export default Register;
+Register.propTypes = {
+  setAlert: PropTypes.func.isRequired,
+};
+
+export default connect(null, { setAlert })(Register);
