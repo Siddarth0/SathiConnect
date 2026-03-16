@@ -46,7 +46,7 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
     <nav className="navbar bg-dark">
       <h1>
         <Link to="/">
-          <i className="fas fa-code" /> DevConnector
+          <i className="fas fa-code" /> SathiConnector
         </Link>
       </h1>
       <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
@@ -56,11 +56,11 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
 
 Navbar.propTypes = {
   logout: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  auth: state.auth
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { logout })(Navbar);
