@@ -167,11 +167,36 @@ x-auth-token: <jwt_token>
 
 ---
 
-## 📦 Deployment Notes
+## 📦 Deployment Notes (Single Server)
 
-- Build frontend with `cd client && npm run build`
-- Run backend with `npm start`
-- Use environment-specific config/secrets for production
+This project supports single-server deployment where one Node/Express app serves both API and frontend.
+
+### Build + Run
+
+```bash
+npm run build
+npm start
+```
+
+### What this does
+
+- Builds React app to `client/build`
+- Express serves static files from `client/build`
+- All non-API routes return React `index.html`
+- API routes continue under `/api/*`
+
+### Required production environment variables
+
+- `NODE_ENV=production`
+- `mongoURI`
+- `jwtSecret`
+- `githubClientId`
+- `githubSecret`
+
+### Example host setup (Render/Railway)
+
+- Build command: `npm run build`
+- Start command: `npm start`
 
 ---
 
