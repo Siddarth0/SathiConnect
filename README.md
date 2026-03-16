@@ -17,6 +17,12 @@ A full-stack MERN social platform where developers can create profiles, share po
 
 ---
 
+## 🌍 Live Demo
+
+- https://sathiconnect.onrender.com/
+
+---
+
 ## ✨ Highlights
 
 - 🔐 JWT-based authentication and protected routes
